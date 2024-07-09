@@ -63,17 +63,15 @@ const Feed = async ({ searchParams, username, blockedPostId }: { username?: stri
     });
 
     // Extract unique follower and following IDs
-    const followerIds = new Set(
+    const followerIds = 
       followersAndFollowings.map(f => f.followerId)
-    );
-    const followingIds = new Set(
+    ;
+    const followingIds = 
       followersAndFollowings.map(f => f.followingId)
-    );
+    ;
 
     // Combine userId, followerIds, and followingIds into a single array of unique IDs
-    const ids = Array.from(
-      new Set([userId, ...followerIds, ...followingIds])
-    );
+    const ids =[userId, ...followerIds, ...followingIds];
 
     // Fetch posts and total post count in parallel
 
